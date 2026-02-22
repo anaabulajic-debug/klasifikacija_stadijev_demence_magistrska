@@ -1,7 +1,7 @@
 from data_loading import load_dataset
 import pandas as pd
 from recoding import unify_dataset
-from grafi import target_class_balance
+from grafi import target_class_balance, numeric_distributions
 
 def main():
     pd.set_option("display.max_rows", None)
@@ -15,6 +15,7 @@ def main():
     print(repr(lethe.columns.tolist()))
     print(repr(nacc.columns.tolist()))
     target_class_balance(lethe, nacc)
+    numeric_distributions(lethe, nacc)
 
 if __name__ == '__main__':
     main()

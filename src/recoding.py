@@ -130,6 +130,9 @@ def recode (nacc, lethe):
     #df je nacc
     nacc["height"] *= 2.54
     nacc["weight"] *= 0.45359237
+
+    lethe["bmi"] = (lethe["weight"]) / ((lethe["height"])**2)
+
     # mogoče dodaj DBP pa SBP checks
 
 
@@ -470,7 +473,7 @@ def unify_dataset(lethe, nacc):
 
     print("AFTER recode")
     print("lethe columns:", repr(lethe.columns.tolist()))
-    print("nacc  columns:", repr(nacc.columns.tolist()))
+    print("nacc columns:", repr(nacc.columns.tolist()))
 
     both = pd.concat([lethe, nacc])
     print("Concatenated dfs:", both.head(10))
