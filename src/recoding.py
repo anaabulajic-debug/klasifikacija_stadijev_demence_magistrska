@@ -114,6 +114,19 @@ def recode (nacc, lethe):
         ]
     )
     """
+    lethe["cog_status"] = np.select(
+        [
+            lethe["cog_status"] == 0,
+            lethe["cog_status"] == 2,
+            lethe["cog_status"] == 3,
+        ],
+        [
+            0,
+            1,
+            2
+        ]
+    )
+
     #df je nacc
     nacc["height"] *= 2.54
     nacc["weight"] *= 0.45359237

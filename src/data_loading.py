@@ -30,9 +30,9 @@ def nacc_early_derivations(df):
             (df["NACCUDSD"] == 4) & (df["NACCETPR"] == 1)
         ],
         [
-            0,
-            2,
-            3
+            0, #NCI
+            1, #MCI
+            2 #AD
         ]
     )
 
